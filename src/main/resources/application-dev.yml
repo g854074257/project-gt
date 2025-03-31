@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    hikari:
+      min-idle: 10 # 最小空闲连接数
+      connection-timeout: 300000 # 最大毫秒数
+      max-lifetime: 1800000 # 关闭后最长生命周期
+      max-pool-size: 100 #最大连接数
+      is-auto-commit: true
+      connection-test-query: select 1
+      idle-timeout: 600000 # 空闲最长时间
+      pool-name: DateSourceHikariCP
+    dynamic:
+      p6spy: false
+      primary: master
+      strict: false
+      datasource:
+        master:
+          username: root
+          password: 333
+          url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        slave:
+          username: root
+          password: 333
+          url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        openPlatform:
+          username: root
+          password: 333
+          url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+          driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      database: 0
+      host: 192.168.34.129
+      password:
+      port: 6379
+      jedis:
+        pool.max-idle: 10
+        pool.min-idle: 10
+        pool.max-active: 50
+        pool.max-wait: 2000ms
+
+logging:
+  level:
+    root: info
+  config: classpath:logback-dev.xml
+mqtt:
+  url: ws://127.0.0.1:31861
