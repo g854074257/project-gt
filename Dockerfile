@@ -1,5 +1,5 @@
 #指定基础镜像，在其上进行定制
-FROM 192.168.149.9:6680/zhxy/openjdk1702:v2023021602
+FROM jdk17
 
 #维护者信息
 MAINTAINER ljm
