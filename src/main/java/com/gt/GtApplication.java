@@ -12,5 +12,4 @@ public class GtApplication {
         SpringApplication.run(GtApplication.class, args);
     }
 
-
 }

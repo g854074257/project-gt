@@ -1,12 +1,25 @@
 server:
   port: 1580
 spring:
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
   profiles:
     active: dev
   application:
     name: project-gt
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+    username: postgres
+    password: 123456
+    hikari:
+      min-idle: 10
+      max-pool-size: 100
+      connection-timeout: 300000
+      max-lifetime: 1800000
+      is-auto-commit: true
+      connection-test-query: select 1
+      idle-timeout: 600000
+      pool-name: DateSourceHikariCP
   servlet:
     multipart:
       max-file-size: 20MB # 单个文件最大大小 默认1M

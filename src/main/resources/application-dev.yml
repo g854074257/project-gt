@@ -9,26 +9,10 @@ spring:
       connection-test-query: select 1
       idle-timeout: 600000 # 空闲最长时间
       pool-name: DateSourceHikariCP
-    dynamic:
-      p6spy: false
-      primary: master
-      strict: false
-      datasource:
-        master:
-          username: root
-          password: 123456
-          url: jdbc:my6sql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
-          driver-class-name: com.mysql.cj.jdbc.Driver
-        slave:
-          username: root
-          password: 123456
-          url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
-          driver-class-name: com.mysql.cj.jdbc.Driver
-        openPlatform:
-          username: root
-          password: 123456
-          url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
-          driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
   data:
     redis:
       database: 0

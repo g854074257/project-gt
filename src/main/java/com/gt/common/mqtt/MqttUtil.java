@@ -2,7 +2,6 @@ package com.gt.common.mqtt;
 
 import com.alibaba.fastjson.JSONObject;
 import com.gt.common.exception.IotException;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
