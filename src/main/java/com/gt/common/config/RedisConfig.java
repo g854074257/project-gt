@@ -20,6 +20,7 @@ public class RedisConfig {
         // 设置 Value 的序列化为 JSON（需引入 Jackson 依赖）
         template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
 
+        template.afterPropertiesSet();
         return template;
     }
 }

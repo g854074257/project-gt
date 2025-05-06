@@ -16,14 +16,20 @@ spring:
   data:
     redis:
       database: 0
-      host: 127.0.0.1
+      host: 192.168.142.129
       password: 123456
-      port: 6379
+      port: 5198
       jedis:
         pool.max-idle: 10
         pool.min-idle: 10
         pool.max-active: 50
         pool.max-wait: 2000ms
+
+tair:
+  servers: 192.168.142.129:5198
+  namespace: 0
+  password: test
+
 
 logging:
   level:
